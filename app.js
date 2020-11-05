@@ -38,22 +38,6 @@ mongoose.set("useFindAndModify", false);
 mongoose.set("useCreateIndex", true);
 mongoose.set("useUnifiedTopology", true);
 
-// var jsonfile = require("jsonfile");
-// var file = "./userdata.json";
-
-// app.get("/", (req, res) => {
-//   res.send("Hello World!");
-// });
-
-// app.get("/data", (req, res) => {
-//   res.send("Hello World this is data!");
-// });
-
-// app.all("/", (req, res) => {
-//   //console.log(_dirname);
-//   res.send("Working");
-// });
-
 app.get("/", (req, res) => {
   //console.log(_dirname);
   res.sendFile(__dirname + "/index.html");
@@ -115,9 +99,10 @@ app.post("/login", (req, res) => {
     }
     if (user) {
       console.log("logged in user");
+      res.redirect("/courses");
     }
 
-    return res.status(200).send();
+//     return res.status(200).send();
   });
 });
 
@@ -154,76 +139,6 @@ app.get("/bba", (req, res) => {
 app.get("/mba", (req, res) => {
   //console.log(_dirname);
   res.sendFile(__dirname + "/mba.html");
-});
-
-app.get("/get", (req, res) => {
-  //console.log(_dirname);
-  res.sendFile(__dirname + "/get.html");
-});
-
-app.post("/", (req, res) => {
-  //console.log(_dirname);
-  // res.send("submitted");
-  // console.log(req.body);
-
-  // let n1 = Number(req.body.n1);
-  // let n2 = Number(req.body.n2);
-
-  // let sum = n1 + n2;
-
-  // res.send("Sum - " + sum);
-
-  var id = req.body.id;
-  var name = req.body.name;
-  var price = req.body.price;
-  var description = req.body.description;
-  var date = req.body.date;
-
-  //start writing
-  var obj = {
-    BookID: id,
-    Name: name,
-    Price: price,
-    Desription: description,
-    Date: date,
-  };
-
-  jsonfile.writeFileSync(file, obj, { flag: "a" });
-
-  res.send("Data saved successfully " + id);
-
-  // fs.readFile(file, (err, data) => {
-  //   if (err && err.code === "ENOENT") {
-  //     // But the file might not yet exist.  If so, just write the object and bail
-  //     return fs.writeFile(
-  //       file,
-  //       JSON.stringify([obj]),
-  //       (error) => console.error
-  //     );
-  //   } else if (err) {
-  //     // Some other error
-  //     console.error(err);
-  //   }
-  //   // 2. Otherwise, get its JSON content
-  //   else {
-  //     try {
-  //       const fileData = JSON.parse(data);
-
-  //       // 3. Append the object you want
-  //       fileData.push(obj);
-
-  //       //4. Write the file back out
-  //       return fs.writeFile(
-  //         file,
-  //         JSON.stringify(fileData),
-  //         (error) => console.error
-  //       );
-  //     } catch (exception) {
-  //       console.error(exception);
-  //     }
-  //   }
-  // });
-  // res.send("Data saved successfully");
 });
 
 app.listen(port, () => {
