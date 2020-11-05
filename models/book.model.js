@@ -6,4 +6,5 @@ var student = new mongoose.Schema({
   phone: { type: String },
   password: { type: String },
 });
-mongoose.model("user", student);
+var data=mongoose.model("user", student);
+module.exports = data;
