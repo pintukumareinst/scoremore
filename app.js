@@ -20,7 +20,8 @@ const port = 3000;
 
 var flag = 0;
 
-const userClass = mongoose.model("user");
+// const userClass = mongoose.model("user");
+var data = require("./models/book.model");
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(morgan("dev"));
@@ -71,7 +72,7 @@ app.post("/signup", (req, res) => {
 });
 
 function insertRecord(req, res) {
-  var user = new userClass();
+  var user = new data();
   user.name = req.body.name;
   user.username = req.body.username;
   user.phone = req.body.phone;
