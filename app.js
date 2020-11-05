@@ -98,21 +98,28 @@ app.get("/login", (req, res) => {
 });
 
 //Handling user login
-// app.post(
-//   "/login",
-//   passport.authenticate("local", {
-//     successRedirect: "/secret",
-//     failureRedirect: "/login",
-//   }),
-//   function (req, res) {}
-// );
-app.post(
-  "/login",
-  passport.authenticate("local", {
-    successRedirect: "/",
-    failureRedirect: "/login",
-  })
-);
+app.post("/login", (req, res) => {
+  var username = req.body.username;
+  var password = req.body.password;
+
+  data.findOne({ username: username, password: password }, function (
+    err,
+    user
+  ) {
+    if (err) {
+      console.log(err);
+      return res.status(500).send();
+    }
+    if (!user) {
+      return res.status(404).send();
+    }
+    if (user) {
+      console.log("logged in user");
+    }
+
+    return res.status(200).send();
+  });
+});
 
 app.get("/courses", (req, res) => {
   //console.log(_dirname);
