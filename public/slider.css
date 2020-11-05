@@ -1,0 +1,50 @@
+.carousel-item img {
+  height: 100;
+  width: 100%;
+}
+.carousel-control-next-icon,
+.carousel-control-prev-icon {
+  height: 30px;
+  width: 30px;
+}
+.carousel-caption {
+  background-color: #17252a;
+  color: white;
+  width: 100%;
+  left: 0;
+}
+.carousel-indicators {
+  margin-bottom: 25px;
+}
+/*slider background*/
+#A {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("images/l1download.jfif");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  width: 100%;
+  height: 100vh;
+}
+#B {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("images/l2download.jfif");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  width: 100%;
+  height: 100vh;
+}
+#C {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("images/5.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  width: 100%;
+  height: 100vh;
+}
+.jumbotron {
+  background: none;
+}
+/*slider background*/

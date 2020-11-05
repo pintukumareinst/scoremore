@@ -1,0 +1,31 @@
+#main{
+	height: 170px;
+  background-image: linear-gradient(to right, #093028 , #237A57);
+  margin-top: 40px;
+}
+h1{
+	color: white;
+	padding-top: 25px;
+}
+.button2{
+	border-radius: 20px; width:100px; height:30px;
+	background-image: linear-gradient(to right, #65C7F7 , #0052D4);
+	color: white;
+	border: none;
+	margin-left: 10px;
+}
+.A{
+	margin-top: 20px;
+	margin-left: 20px;
+	margin-right: 5px;
+}
+.B{
+	margin-top: 20px;
+	margin-left: 20px;
+	margin-right: 20px;
+}
+.C{
+	margin-top: 20px;
+	margin-left: 20px;
+	margin-right: 20px;
+}
