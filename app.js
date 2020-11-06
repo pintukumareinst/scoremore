@@ -63,7 +63,7 @@ function insertRecord(req, res) {
   user.password = req.body.password;
   user.save((err, doc) => {
     if (!err) {
-      console.log("saved");
+      console.log("Account created successfully");
       flag = 1;
     } else {
       console.log("An error is there in inserting the records" + err);
@@ -95,6 +95,7 @@ app.post("/login", (req, res) => {
       return res.status(500).send();
     }
     if (!user) {
+      console.log("Invalid username or password");
       return res.status(404).send();
     }
     if (user) {
